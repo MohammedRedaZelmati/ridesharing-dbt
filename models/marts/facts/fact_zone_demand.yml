@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: fact_zone_demand
+    description: "Demand and supply fact table at H3 zone and 5-minute window grain."
+
+    columns:
+
+      - name: zone_window_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: h3_zone_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_h3_zone')
+                field: h3_zone_key
+
+      - name: date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+
+      - name: time_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_time')
+                field: time_key
+
+      - name: h3_cell
+        data_tests:
+          - not_null
+
+      - name: window_start
+        data_tests:
+          - not_null

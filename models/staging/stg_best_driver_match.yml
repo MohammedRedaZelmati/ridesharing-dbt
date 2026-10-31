@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: stg_best_driver_match
+    description: "Cleaned selected-driver matching results from the Databricks Gold layer."
+
+    columns:
+
+      - name: ride_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: driver_id
+        data_tests:
+          - not_null
+
+      - name: request_time
+        data_tests:
+          - not_null
+
+      - name: pickup_h3
+        data_tests:
+          - not_null
+
+      - name: distance_km
+        data_tests:
+          - not_null
+
+      - name: final_score
+        data_tests:
+          - not_null

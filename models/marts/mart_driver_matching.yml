@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: mart_driver_matching
+    description: "Business-ready driver matching analytics with driver, zone, date and time context."
+
+    columns:
+
+      - name: driver_match_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: ride_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: driver_key
+        data_tests:
+          - not_null
+
+      - name: h3_zone_key
+        data_tests:
+          - not_null
+
+      - name: date_key
+        data_tests:
+          - not_null
+
+      - name: time_key
+        data_tests:
+          - not_null
+
+      - name: distance_km
+        data_tests:
+          - not_null
+
+      - name: final_score
+        data_tests:
+          - not_null

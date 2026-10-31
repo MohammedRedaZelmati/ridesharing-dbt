@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: fact_driver_match
+    description: "Fact table containing one selected driver match per ride request."
+
+    columns:
+
+      - name: driver_match_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: ride_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: driver_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_driver')
+                field: driver_key
+
+      - name: h3_zone_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_h3_zone')
+                field: h3_zone_key
+
+      - name: date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+
+      - name: time_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_time')
+                field: time_key
+
+      - name: distance_km
+        data_tests:
+          - not_null
+
+      - name: final_score
+        data_tests:
+          - not_null

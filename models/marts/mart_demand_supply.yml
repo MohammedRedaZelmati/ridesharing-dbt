@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: mart_demand_supply
+    description: "Business-ready demand and supply analytics by H3 zone and 5-minute window."
+
+    columns:
+
+      - name: zone_window_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: h3_zone_key
+        data_tests:
+          - not_null
+
+      - name: date_key
+        data_tests:
+          - not_null
+
+      - name: time_key
+        data_tests:
+          - not_null
+
+      - name: request_count
+        data_tests:
+          - not_null
+
+      - name: unique_drivers
+        data_tests:
+          - not_null

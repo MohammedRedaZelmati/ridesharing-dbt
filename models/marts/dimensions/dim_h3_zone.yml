@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_h3_zone
+    description: "Dimension containing one row per unique H3 geographic zone."
+
+    columns:
+      - name: h3_zone_key
+        tests:
+          - not_null
+          - unique
+
+      - name: h3_cell
+        tests:
+          - not_null
+          - unique

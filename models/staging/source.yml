@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: ridesharing_raw
+    database: RIDESHARING
+    schema: RAW
+
+    tables:
+      - name: H3_DEMAND_SUPPLY_METRICS
+
+      - name: BEST_DRIVER_MATCH

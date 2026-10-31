@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_driver
+    description: "Dimension containing one row per unique driver."
+
+    columns:
+      - name: driver_key
+        data_tests:
+          - not_null
+          - unique
+
+      - name: driver_id
+        data_tests:
+          - not_null
+          - unique
